@@ -34,11 +34,7 @@ module.exports = {
                     {
                         loader: "style-loader"
                     }, {
-                        loader: "css-loader",
-                        options: {
-                            modules: true/*, // 指定启用css modules
-                            localIdentName: '[name]__[local]--[hash:base64:5]' // 指定css的类名格式*/
-                        }
+                        loader: "css-loader"
                     }
                 ]
             }
@@ -52,6 +48,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: __dirname + "/app/index.tmpl.html"//new 一个这个插件的实例，并传入相关的参数
         }),
+        // 自动清除build下文件
         new CleanWebpackPlugin('build/*.*', {
             root: __dirname,
             verbose: true,

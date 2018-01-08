@@ -10,5 +10,7 @@
         }]
       }]]
     }
-  }
+  },
+  // npm install babel-plugin-import --save-dev 配置antd按需加载
+  "plugins":[["import", {"libraryName": "antd", "style": "css"}]]
 }
