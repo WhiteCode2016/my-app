@@ -1,7 +1,11 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import Sider from "./components/Sider";
-
+import { BrowserRouter } from 'react-router-dom';
+import App from "./App";
 import './main.css';
 
-ReactDom.render(<Sider />, document.getElementById('root'));
+ReactDom.render((
+    <BrowserRouter>
+       <App/>
+    </BrowserRouter>
+    ), document.getElementById('root'));
