@@ -6,7 +6,9 @@ import Category from "./demo/Category";
 import Products from "./demo/Products";
 import Home from "./views/Home";
 import Log from "./views/Log";
-import CommonSider from "./components/common/CommonSider";
+import TodoApp from "./TodoList/components/App";
+import OnePasswordApp from "./OnePassword/components/OnePasswordApp";
+import DemoHome from "./demo/DemoHome";
 
 const { Header, Sider, Content } = Layout;
 const SubMenu = Menu.SubMenu;
@@ -38,11 +40,21 @@ class App extends Component {
                     >
                         <SubMenu
                             key="sub1"
-                            title={<span><Icon type="user" /><span>User</span></span>}
+                            title={<span><Icon type="user" /><span>EXAMPLE</span></span>}
                         >
                             <Menu.Item key="1"><Link to="/">Home</Link></Menu.Item>
                             <Menu.Item key="2"><Link to="/log">Log</Link></Menu.Item>
                             <Menu.Item key="3"><Link to="/coffeeDetail">coffeeList</Link></Menu.Item>
+                            <Menu.Item key="4"><Link to="/todoListApp">ToDoListApp</Link></Menu.Item>
+                            <Menu.Item key="5"><Link to="/onePasswordApp">OnePasswordApp</Link></Menu.Item>
+                        </SubMenu>
+                        <SubMenu
+                            key="sub2"
+                            title={<span>DEMO</span>}
+                        >
+                            <Menu.Item key="6"><Link to="/demoHome">Homes</Link></Menu.Item>
+                            <Menu.Item key="7"><Link to="/category">Category</Link></Menu.Item>
+                            <Menu.Item key="8"><Link to="/products">Products</Link></Menu.Item>
                         </SubMenu>
                     </Menu>
                 </Sider>
@@ -59,6 +71,13 @@ class App extends Component {
                             <Route exact path="/" component={Home} />
                             <Route exact path="/log" component={Log} />
                             <Route path="/coffeeDetail" component={CoffeeList} />
+                            <Route path="/todoListApp" component={TodoApp}/>
+                            <Route path="/onePasswordApp" component={OnePasswordApp}/>
+                        </Switch>
+                        <Switch>
+                            <Route path="/demoHome" component={DemoHome}/>
+                            <Route path="/category" component={Category}/>
+                            <Route path="/products" component={Products}/>
                         </Switch>
                     </Content>
                 </Layout>
